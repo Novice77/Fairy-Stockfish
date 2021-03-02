@@ -114,7 +114,9 @@ namespace Eval::NNUE {
 
       for (std::size_t i = 0; i < kHalfDimensions; ++i)
         biases_[i] = read_little_endian<BiasType>(stream);
-      for (std::size_t i = 0; i < kHalfDimensions * (Architecture == NNUE_SHOGI ? SQUARE_NB_SHOGI * SHOGI_PS_END : kInputDimensions); ++i)
+      for (std::size_t i = 0; i < kHalfDimensions * (  Architecture == NNUE_SHOGI ? SQUARE_NB_SHOGI * SHOGI_PS_END
+                                                     : Architecture == NNUE_CHESS ? SQUARE_NB_CHESS * PS_END
+                                                     : kInputDimensions); ++i)
         weights_[i] = read_little_endian<WeightType>(stream);
       return !stream.fail();
     }
