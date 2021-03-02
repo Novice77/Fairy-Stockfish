@@ -1039,6 +1039,10 @@ namespace {
                 if (!(pos.pieces(Them) & bb))
                     unsafeSquares &= attackedBy[Them][ALL_PIECES] | pos.pieces(Them);
 
+                // Only consider blockers for atomic
+                if (pos.blast_on_capture())
+                    unsafeSquares &= pos.pieces(Them);
+
                 // If there are no enemy pieces or attacks on passed pawn span, assign a big bonus.
                 // Or if there is some, but they are all attacked by our pawns, assign a bit smaller bonus.
                 // Otherwise assign a smaller bonus if the path to queen is not attacked
