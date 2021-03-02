@@ -1106,7 +1106,7 @@ namespace {
     bool pawnsOnly = !(pos.pieces(Us) ^ pos.pieces(Us, PAWN));
 
     // Early exit if, for example, both queens or 6 minor pieces have been exchanged
-    if (pos.non_pawn_material() < SpaceThreshold && !pawnsOnly && pos.double_step_enabled())
+    if (pos.non_pawn_material() < SpaceThreshold && !pawnsOnly && pos.double_step_enabled() && !pos.blast_on_capture())
         return SCORE_ZERO;
 
     constexpr Color Them     = ~Us;
