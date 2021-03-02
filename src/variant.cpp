@@ -709,6 +709,7 @@ namespace {
         v->promotionRank = RANK_7;
         v->promotedPieceType[LANCE]        = GOLD;
         v->promotedPieceType[SHOGI_KNIGHT] = GOLD;
+        v->nnueArchitecture = NNUE_SHOGI;
         return v;
     }
     Variant* capablanca_variant() {

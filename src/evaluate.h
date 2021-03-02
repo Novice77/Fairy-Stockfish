@@ -50,4 +50,6 @@ namespace Eval {
 
 } // namespace Eval
 
+extern NnueArchitecture Architecture;
+
 #endif // #ifndef EVALUATE_H_INCLUDED

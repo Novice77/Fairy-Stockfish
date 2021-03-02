@@ -128,6 +128,8 @@ struct Variant {
   MaterialCounting materialCounting = NO_MATERIAL_COUNTING;
   CountingRule countingRule = NO_COUNTING;
 
+  NnueArchitecture nnueArchitecture = NNUE_CHESS;
+
   // Derived properties
   bool fastAttacks = true;
   bool fastAttacks2 = true;

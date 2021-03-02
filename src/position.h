@@ -143,6 +143,7 @@ public:
   PieceType castling_rook_piece() const;
   PieceType king_type() const;
   PieceType nnue_king() const;
+  NnueArchitecture nnue_architecture() const;
   bool checking_permitted() const;
   bool drop_checks() const;
   bool must_capture() const;
@@ -506,6 +507,11 @@ inline PieceType Position::king_type() const {
 inline PieceType Position::nnue_king() const {
   assert(var != nullptr);
   return var->nnueKing;
+}
+
+inline NnueArchitecture Position::nnue_architecture() const {
+  assert(var != nullptr);
+  return var->nnueArchitecture;
 }
 
 inline bool Position::checking_permitted() const {

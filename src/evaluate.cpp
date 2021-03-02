@@ -57,6 +57,8 @@
 using namespace std;
 using namespace Eval::NNUE;
 
+NnueArchitecture Architecture;
+
 namespace Eval {
 
   bool useNNUE;
@@ -99,6 +101,8 @@ namespace Eval {
     }
     if (!useNNUE)
         return;
+
+    Architecture = variants.find(variant)->second->nnueArchitecture;
 
     #if defined(DEFAULT_NNUE_DIRECTORY)
     #define stringify2(x) #x
