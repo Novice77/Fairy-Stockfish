@@ -165,6 +165,9 @@ namespace {
         if (passed && is_ok(s + Up) && (r < pos.promotion_rank() || !pos.mandatory_pawn_promotion()))
             e->passedPawns[Us] |= s;
 
+        // Pawns are self-protecting in atomic
+        if (pos.blast_on_capture()) {} else
+
         // Score this pawn
         if ((support | phalanx) && (r < pos.promotion_rank() || !pos.mandatory_pawn_promotion()))
         {
